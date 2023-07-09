@@ -7,6 +7,8 @@ export default function Home() {
   const [hour, setHour] = useState("");
   const [result, setResult] = useState(0);
 
+  const [copySuccess, setCopySuccess] = useState(false);
+
   function calculateTime() {
     const tg = (parseFloat(time) * 1000000) / parseFloat(hour);
     setResult(tg);
@@ -16,6 +18,7 @@ export default function Home() {
     setTime("");
     setHour("");
     setResult(0);
+    setCopySuccess(false);
   }
 
   function copyToClipboard() {
@@ -25,6 +28,8 @@ export default function Home() {
       textField.select()
       document.execCommand('copy')
       textField.remove()
+
+      setCopySuccess(true);
   }
 
   return (
@@ -76,9 +81,9 @@ export default function Home() {
             </p>
             <button
                 onClick={() => copyToClipboard()}
-                className="bg-blue-500 shadow-md hover:shadow-lg rounded-2xl w-full h-12 text-white font-medium text-xl flex justify-center items-center"
+                className={` shadow-md hover:shadow-lg rounded-2xl w-full h-12 text-white font-medium text-xl flex justify-center items-center transition-colors duration-150 ${copySuccess ? 'bg-green-500' : 'bg-blue-500' }`}
               >
-                Copiar
+                {copySuccess ? ('Copiado com sucesso!') : ('Copiar')}
               </button>
             <div className="flex justify-center mt-5">
               <div className="w-20 h-1 bg-gray-100 rounded-l-xl rounded-r-xl"></div>
