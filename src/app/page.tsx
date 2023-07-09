@@ -22,6 +22,7 @@ export default function Home() {
   }
 
   function copyToClipboard() {
+    if (result) {
       var textField = document.createElement('textarea')
       textField.innerText = JSON.stringify(Math.floor(result * 100) / 100)
       document.body.appendChild(textField)
@@ -30,6 +31,7 @@ export default function Home() {
       textField.remove()
 
       setCopySuccess(true);
+    }
   }
 
   return (
