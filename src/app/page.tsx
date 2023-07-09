@@ -12,6 +12,12 @@ export default function Home() {
     setResult(tg)
   }
 
+  function clearCalculator() {
+    setTime('')
+    setHour('')
+    setResult(0)
+  }
+
   return (
     <main className="bg-gradient-to-r from-gray-100 to-gray-300 w-screen min-h-screen grid place-content-center">
       <div className="max-w-xs">
@@ -23,9 +29,13 @@ export default function Home() {
           <div className="m-2 flex flex-col gap-3">
             <input value={time} onChange={(e) => setTime(e.target.value)} type="number" name="time" className="bg-gray-200 shadow-md rounded-2xl w-full h-12 text-black font-medium flex justify-center items-center outline-none text-center p-4" placeholder="Tempo em dias"></input>
             <input value={hour} onChange={(e) => setHour(e.target.value)} type="number" name="hours" className="bg-gray-200 shadow-md rounded-2xl w-full h-12 text-black font-medium flex justify-center items-center outline-none text-center p-4" placeholder="Horas de exposição"></input>
-            <button onClick={() => calculateTime()} className="bg-green-500 shadow-md rounded-2xl w-full h-12 text-white font-medium text-xl flex justify-center items-center">Calcular</button>
+            <div className="flex gap-3">
+              <button onClick={() => clearCalculator()} className="bg-red-500 shadow-md rounded-2xl w-full h-12 text-white font-medium text-xl flex justify-center items-center">Limpar</button>
+              <button onClick={() => calculateTime()} className="bg-green-500 shadow-md rounded-2xl w-full h-12 text-white font-medium text-xl flex justify-center items-center">Calcular</button>
+
+            </div>
             <p className="text-gray-700 font-semibold w-auto text-center text-xl mt-5">Resultado</p>
-            <p className="text-gray-700 font-semibold w-auto text-center text-2xl uppercase">{result}</p>
+            <p className="text-gray-700 font-semibold w-auto text-center text-2xl uppercase">{result > 0 ? (result) : ("aguardando")}</p>
             <div className="flex justify-center mt-5">
               <div className="w-20 h-1 bg-gray-100 rounded-l-xl rounded-r-xl"></div>
             </div>
