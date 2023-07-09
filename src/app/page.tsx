@@ -22,7 +22,7 @@ export default function Home() {
     <main className="bg-gradient-to-r from-gray-100 to-gray-300 w-screen min-h-screen grid place-content-center">
       <div className="max-w-xs">
         <h1 className="font-bold text-2xl uppercase text-center mb-10 text-slate-800">
-          Homem Horas Trabalhadas
+        Taxa de gravidade
         </h1>
       </div>
       <section className="flex flex-col justify-center items-center gap-5">
