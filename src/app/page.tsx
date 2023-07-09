@@ -11,7 +11,7 @@ export default function Home() {
 
   function calculateTime() {
     const tg = (parseFloat(time) * 1000000) / parseFloat(hour);
-    setResult(tg);
+    setResult(Math.floor(tg * 100) / 100);
   }
 
   function clearCalculator() {
@@ -24,7 +24,7 @@ export default function Home() {
   function copyToClipboard() {
     if (result) {
       var textField = document.createElement('textarea')
-      textField.innerText = JSON.stringify(Math.floor(result * 100) / 100)
+      textField.innerText = JSON.stringify(result)
       document.body.appendChild(textField)
       textField.select()
       document.execCommand('copy')
