@@ -5,8 +5,8 @@ import './globals.css'
 const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Calculadora de Homem Horas Trabalhadas',
-  description: 'Calculadora de Homem Horas Trabalhadas para facilitar a vida dos técnicos de segurança!',
+  title: 'Calculadora de Taxa de gravidade',
+  description: 'Calculadora de Taxa de gravidade para facilitar a vida dos técnicos de segurança!',
 }
 
 export default function RootLayout({
