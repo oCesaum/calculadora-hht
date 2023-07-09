@@ -23,12 +23,12 @@ export default function Home() {
 
   function copyToClipboard() {
     if (result) {
-      var textField = document.createElement('textarea')
-      textField.innerText = JSON.stringify(result)
-      document.body.appendChild(textField)
-      textField.select()
-      document.execCommand('copy')
-      textField.remove()
+      var textField = document.createElement("textarea");
+      textField.innerText = JSON.stringify(result);
+      document.body.appendChild(textField);
+      textField.select();
+      document.execCommand("copy");
+      textField.remove();
 
       setCopySuccess(true);
     }
@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <main className="bg-gradient-to-r from-gray-100 to-gray-300 w-screen min-h-screen grid place-content-center">
       <h1 className="font-bold text-2xl uppercase text-center mb-10 text-slate-800">
-      Taxa de gravidade
+        Taxa de gravidade
       </h1>
       <section className="flex flex-col justify-center items-center gap-5">
         <div className="w-72 h-auto bg-white rounded-2xl shadow-xl hover:shadow-xl transition-all border-4 border-gray-100">
@@ -82,11 +82,13 @@ export default function Home() {
               {result > 0 ? result : "aguardando"}
             </p>
             <button
-                onClick={() => copyToClipboard()}
-                className={` shadow-md hover:shadow-lg rounded-2xl w-full h-12 text-white font-medium text-xl flex justify-center items-center transition-colors duration-150 ${copySuccess ? 'bg-green-500' : 'bg-blue-500' }`}
-              >
-                {copySuccess ? ('Copiado com sucesso!') : ('Copiar')}
-              </button>
+              onClick={() => copyToClipboard()}
+              className={` shadow-md hover:shadow-lg rounded-2xl w-full h-12 text-white font-medium text-xl flex justify-center items-center transition-colors duration-150 ${
+                copySuccess ? "bg-green-500" : "bg-blue-500"
+              }`}
+            >
+              {copySuccess ? "Copiado com sucesso!" : "Copiar"}
+            </button>
             <div className="flex justify-center mt-5">
               <div className="w-20 h-1 bg-gray-100 rounded-l-xl rounded-r-xl"></div>
             </div>
