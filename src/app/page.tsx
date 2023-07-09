@@ -19,7 +19,6 @@ export default function Home() {
   }
 
   function copyToClipboard() {
-      console.log('text', result)
       var textField = document.createElement('textarea')
       textField.innerText = JSON.stringify(Math.floor(result * 100) / 100)
       document.body.appendChild(textField)
