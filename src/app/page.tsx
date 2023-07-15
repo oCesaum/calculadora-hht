@@ -41,8 +41,8 @@ export default function Home() {
       </h1>
       <section className="flex flex-col justify-center items-center gap-5">
         <div className="w-72 h-auto bg-white rounded-2xl shadow-xl hover:shadow-xl transition-all border-4 border-gray-100">
-          <div className="text-gray-700 font-semibold w-auto m-3 text-right space-y-2 py-2">
-            Fórmua: <span className="text-sm">TG = T x 1.000.000 / H</span>
+          <div className="text-gray-700 font-semibold text-sm text-center w-auto m-3 space-y-2 py-2">
+            Fórmula: TG = T x 1.000.000 / HHT
           </div>
           <div className="m-2 flex flex-col gap-3">
             <input
